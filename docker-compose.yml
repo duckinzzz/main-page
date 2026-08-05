@@ -1,0 +1,27 @@
+services:
+  main-page:
+    image: nginx:alpine
+    container_name: main-page
+    restart: unless-stopped
+    networks:
+      caddy-proxy:
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+      - ./404.html:/usr/share/nginx/html/404.html:ro
+      - ./src:/usr/share/nginx/html/src:ro
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "2"
+    labels:
+      caddy_0: duckinzzz.ru
+      caddy_0.reverse_proxy: "{{upstreams 80}}"
+
+      caddy_1: www.duckinzzz.ru
+      caddy_1.redir: "https://duckinzzz.ru{uri} permanent"
+
+networks:
+  caddy-proxy:
+    external: true

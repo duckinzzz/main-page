@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavel Yurchenko</title>
+    <link rel="icon" type="image/png" href="src/images/favicon.png"/>
+    <link rel="stylesheet" href="src/css/styles.css" type="text/css">
+    <base target="_blank">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap');
+    </style>
+    <script src="src/scripts/keyPressHandler.js"></script>
+    <script src="src/scripts/buttonAdder.js"></script>
+    <script src="src/scripts/toQuack.js"></script>
+    <script src="src/scripts/autoDarkTheme.js"></script>
+    <audio id="quackAudio" src="src/sounds/quack.mp3"></audio>
+
+</head>
+
+<body>
+<div class="main">
+    <div class="name">Yurchenko Pavel</div>
+    <div class="place">FEFU IMCS Student</div>
+    <div class="quote-links-wrapper">
+        <div class="quote">@duckinzzz on everything</div>
+        <div class="links">
+            <ul class="main-links">
+                <li><a href="https://t.me/duckinzzz">tg</a></li>
+                <li><a href="https://www.github.com/duckinzzz">github</a></li>
+                <li><a href="https://www.instagram.com/duckinzzz">inst</a></li>
+            </ul>
+            <ul class="center-link">
+                <li><a href="/clech-stats">[Clech Stats]</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="duckContainer" class="center-container">
+        <button id="duckButton" class="duckButton" onclick="toQuack()">
+            <img class="duckimg" src="src/images/duck.png" alt="duck">
+        </button>
+    </div>
+</div>
+</body>
+
+</html>
